@@ -1,81 +1,116 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Scratch Nộp Bài</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body{
-      margin:0;
-      font-family: Arial;
-      background:#f3f3f3;
-    }
+<title>Nộp bài Scratch</title>
 
-    .topbar{
-      background:#ff4d4d;
-      padding:10px;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      color:white;
-    }
+<style>
 
-    .topbar button{
-      background:#1e3cff;
-      color:white;
-      border:none;
-      padding:10px 18px;
-      border-radius:4px;
-      cursor:pointer;
-      font-weight:bold;
-    }
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f2f2f2;
+}
 
-    .project-name{
-      padding:8px;
-      width:200px;
-      border:none;
-      border-radius:4px;
-    }
+.topbar{
+  background:#ff4d4d;
+  padding:10px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
 
-    iframe{
-      width:100%;
-      height:calc(100vh - 60px);
-      border:none;
-      background:white;
-    }
+button{
+  border:none;
+  padding:10px 18px;
+  border-radius:4px;
+  cursor:pointer;
+  font-weight:bold;
+}
 
-    #loading{
-      position:fixed;
-      inset:0;
-      background:white;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-size:24px;
-      z-index:999;
-    }
-  </style>
+.open-btn{
+  background:#ff9800;
+  color:white;
+}
+
+.submit-btn{
+  background:#1e3cff;
+  color:white;
+}
+
+input{
+  padding:10px;
+  width:220px;
+  border:none;
+  border-radius:4px;
+}
+
+.main{
+  height:calc(100vh - 60px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+}
+
+.big-btn{
+  background:#ff9800;
+  color:white;
+  font-size:24px;
+  padding:20px 40px;
+  border-radius:10px;
+  margin-bottom:30px;
+}
+
+.upload-box{
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+</style>
 </head>
 
 <body>
 
-<div id="loading">
-  Đang tải Scratch...
-</div>
-
 <div class="topbar">
-  <button onclick="nopBai()">📤 Nộp Bài Cho Thầy</button>
 
-  <input class="project-name"
-         id="projectName"
-         placeholder="Tên project"/>
+<button class="open-btn"
+onclick="openScratch()">
+🎮 Mở Scratch
+</button>
+
+<button class="submit-btn"
+onclick="nopBai()">
+📤 Nộp Bài
+</button>
+
+<input
+id="projectName"
+placeholder="Tên project">
+
 </div>
 
-<iframe
-  id="scratchFrame"
-  src="https://scratch.mit.edu/projects/editor/?tutorial=getStarted">
-</iframe>
+<div class="main">
+
+<button class="big-btn"
+onclick="openScratch()">
+🎮 MỞ SCRATCH LÀM BÀI
+</button>
+
+<div class="upload-box">
+
+<h2>📤 Nộp file Scratch (.sb3)</h2>
+
+<input type="file" id="fileInput">
+
+</div>
+
+</div>
 
 <script src="script.js"></script>
 
