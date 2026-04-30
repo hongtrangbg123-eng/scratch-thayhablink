@@ -29,7 +29,7 @@ async function nopBai(){
     try{
 
       const response = await fetch(
-        "DÁN_LINK_APPS_SCRIPT_WEBAPP_Ở_ĐÂY",
+        "https://script.google.com/macros/s/AKfycbzQuKIQijuW5axdfR9zd8dxj2vAWxQeOH8UdxQefeNQ5Oo7sbII8Lfwc8WXnUWWwqJA2Q/exec",
         {
           method:"POST",
           body:JSON.stringify({
